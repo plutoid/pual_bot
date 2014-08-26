@@ -1,0 +1,235 @@
+hellosdfn. (Good)人名；(英)古德；(瑞典)戈德n. (Good)人名；(英)古德；(瑞典)戈德sdfsdf读音: gd
+其他释义:
+n. 好处；善行；慷慨的行为
+adj. 好的；优良的；愉快的；虔诚的
+adv. 好sdfsdfn. 好处；善行；慷慨的行为心跳...
+心跳...
+hello心跳...
+sdf
+sdf
+hello
+其他释义:
+fs
+hello
+有个log的backup修不好怎么办啊
+不知道什么问题
+印度人弄不好久扔给我了
+wo buneng dazi
+额
+vol space, snapvault relations, sc config...
+maxdb的
+vol space怎么看啊
+df -h
+看起来都好的
+snapshot没过去？snapvault 关系没问题？
+踢回给印度人
+
+log 好像十几个小时没传过去了
+secondary 是什么？
+nsa0029
+snapvault status看看在不在传，几分钟能传多少，是不是速度太慢了
+没在传都idle的
+田华昨天那个K2U什么是refresh volume啊
+是啊，说的不清楚，你踢回去问了？
+```
+sdfsdf
+```
+sdfsdf
+```
+```text
+sdfsdf
+sdfsdf
+
+
+
+
+
+
+
+sdfsdf
+```
+sdfsdf
+我现在最怕做各种restore/copy/point in time restore,傻傻分不清楚
+backup的脚本对应做了哪些事情，也是傻傻分不清楚
+```py
+Skip to content
+Explore
+Features
+Enterprise
+Blog
+42
+33
+publiccoldnight/pual_bot
+pual_bot/plugins/paste.py
+coldnight3 months ago
+fix paste to short
+1contributor
+file50 lines (40 sloc)1.77 kb
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+#
+#   Author  :   cold
+#   E-mail  :   wh_linux@126.com
+#   Date    :   14/01/16 12:13:09
+#   Desc    :   粘贴代码插件
+#
+frompluginsimportBasePlugin
+classPastePlugin(BasePlugin):
+    code_typs=['actionscript','ada','apache','bash','c','c#','cpp',
+            'css','django','erlang','go','html','java','javascript',
+            'jsp','lighttpd','lua','matlab','mysql','nginx',
+            'objectivec','perl','php','python','python3','ruby',
+            'scheme','smalltalk','smarty','sql','sqlite3','squid',
+            'tcl','text','vb.net','vim','xml','yaml']
+    defis_match(self,from_uin,content,type):
+        ifcontent.startswith("```"):
+            typ=content.split("\n")[0].lstrip("`").strip().lower()
+            self.ctype=typiftypinself.code_typselse"text"
+            self.code="\n".join(content.split("\n")[1:])
+            returnTrue
+        returnFalse
+    defpaste(self,code,callback,ctype="text"):
+        """ 贴代码 """
+        params={'vimcn':code.encode("utf-8")}
+        url="http://p.vim-cn.com/"
+        self.http.post(url,params,callback=self.read_paste,
+                       kwargs={"callback":callback,"ctype":ctype})
+
+    defread_paste(self,resp,callback,ctype="text"):
+        """ 读取贴代码结果, 并发送消息 """
+        ifresp.code==200:
+            content=resp.body.strip().rstrip("/")+"/"+ctype
+        elifresp.code==400:
+            content=u"内容太短, 不需要贴!"
+        else:
+            content=u"没贴上, 我也不知道为什么!"
+        callback(content)
+
+    defhandle_message(self,callback):
+        self.paste(self.code,callback,self.ctype)
+Status
+API
+Training
+Shop
+Blog
+About
+:copyright: 2014GitHub, Inc.
+Terms
+Privacy
+Security
+Contact
+```
+
+
+登录注册
+文章
+皮肤
+分 类
+信息流
+首页
+Linux
+科学
+科技
+移动
+苹果
+硬件
+软件
+安全
+游戏
+书籍
+ask
+idle
+博客
+云计算
+关 于
+主题
+日志
+图标
+支持者
+编辑介绍
+常见问题
+关注我们：
+Solidot 公告
+文章提交注意事项：
+请在发布文章时用HTML代码加上至少一条新闻来源的链接；原创性消息，可加入相关信息（如涉及公司的网址）的链接。有任何问题，邮件至：he.fang#zdnet.com.cn
+ken：feigaobox@gmail.com
+注意：收到邮件乱码的用户请修改客户端的默认字体编码，从"简体中文（GB2312）"修改为"Unicode（UTF-8）"。
+投 票
+2014年你使用的主浏览器
+Internet Explorer
+Google Chrome
+Mozilla Firefox
+Safari
+Opera
+Lynx
+从来只用国产浏览器
+[结果|投票]
+评论:8| 得票数:345
+热门评论
+物理常数(1 points, 一般)		         		by 陈少举			          	在 2014年05月03日12时17分 星期六 			          	评论到20亿年前的天然核反应堆是如何启动的
+不识英文的喷子最可悲(1 points, 一般)		         		by bk2talas			          	在 2014年05月03日12时10分 星期六 			          	评论到中国科学家发现石头剪刀布的制胜策略
+我国科研屹立世界之癫(1 points, 一般)		         		by dannyfeng			          	在 2014年05月03日11时12分 星期六 			          	评论到中国科学家发现石头剪刀布的制胜策略
+re:分歧终端机可以上市了(1 points, 一般)		         		by Psigh			          	在 2014年05月03日09时20分 星期六 			          	评论到中国科学家发现石头剪刀布的制胜策略
+640x360(1 points, 一般)		         		by ssfjhh			          	在 2014年05月03日07时37分 星期六 			          	评论到梦工厂动画老板提出按分辨率大小的下载电影定价模式
+真相其实稀疏平常(1 points, 一般)		         		by lot			          	在 2014年05月03日02时06分 星期六 			          	评论到7.7万神秘YouTube视频背后的真相
+国外学者历时两千年都没解决的问题(1 points, 一般)		         		by Panggit			          	在 2014年05月03日00时42分 星期六 			          	评论到中国科学家发现石头剪刀布的制胜策略
+分歧终端机可以上市了(1 points, 一般)		         		by erix			          	在 2014年05月03日00时18分 星期六 			          	评论到中国科学家发现石头剪刀布的制胜策略
+这和理论物理有什么关系？(1 points, 一般)		         		by jerryofwong			          	在 2014年05月02日23时21分 星期五 			          	评论到中国科学家发现石头剪刀布的制胜策略
+无语(1 points, 一般)		         		by gccer			          	在 2014年05月02日23时19分 星期五 			          	评论到中国科学家发现石头剪刀布的制胜策略
+往日文章
+星期五05月02日
+中国科学家发现石头剪刀布的制胜策略(11)
+7.7万神秘YouTube视频背后的真相(2)
+99%的新移动恶意程序是针对Android(2)
+梦工厂动画老板提出按分辨率大小的下载电影定价模式(3)
+微软将为XP用户提供IE的0day漏洞修正(0)
+星期四05月01日
+Red Hat收购Ceph文件系统开发商InkTank(1)
+彭博终端将提供比特币实时价格(0)
+20亿年前的天然核反应堆是如何启动的(2)
+台湾警方传唤发帖呼吁瘫痪捷运的男子(5)
+中国连续25年进入美国的知识产权黑名单(5)
+昨天的文章
+您可能关注的文章
+搜狐下架多部美剧
+胡正新书《2万亿的经历》发布
+罗马共和国的毁灭是因为混凝土？
+芝加哥大学教授呼吁学校拒绝孔子学院
+美国发射民兵洲际导弹的数据储存在8英寸软
+央视将引进《生活大爆炸》
+中国警方配备的手枪使用非标准子弹
+Hulu屏蔽VPN用户
+用Go开发Go编译器
+不要显示
+test
+-w 上海
+-w 上海
+有人重启过ssc服务器不，不记得了，好像有篇文档的
+我前面重启的是/etc/init.d/ssc_server
+是db的，估计ssc2-ls 的ssc服务挂了
+那就不知道了
+ssc list -type maxdb 
+查询无结果
+睡会觉
+让他去
+周末班比晚班还痛苦
+
+我吐血
+太长了，还不能打酱油，印度人找麻烦多，现在好像不大好把握拒绝的尺度了
+我也这么绝对
+觉得
+晚上也差不多
+前面他又要给我个log backup跑失败的
+我说你自己发邮件给expert
+我一会也会发的
+如果是ssc2-ls的问题，所有对到这上面的backup都失败
+恩 那个也是所生产的
+ssc-ls的
+ssc2
+test
+j
+jjj jjjjjjj
+sdfkj
+sdf
+ff

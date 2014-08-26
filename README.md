@@ -36,6 +36,7 @@ sudo apt-get install python-bs4
 * 将WebQQ协议提取成一个包: https://github.com/coldnight/twqq
 * 对代码进行重构
 
+2105976315 sap@CN
 
 # TODO
 * ~~修复群成员列表获取~~
